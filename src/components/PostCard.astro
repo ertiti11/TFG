@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import foto from "./assets/prueba.jpeg";
+
+const { title, photo, author, date, tags } = Astro.props;
+---
+
+<div class="w-full flex flex-col lg:max-w-md">
+  <Image
+    src={foto}
+    alt="prueba?"
+    widths={[200, 400, 600]}
+    sizes="(max-width: 800px) 100vw, 800px"
+    loading="eager"
+    class="w-full object-cover rounded-xl object-center bg-white hover:scale-[1.03] transition-all duration-300 ease-in-out"
+  />
+  <div
+    class="text-blue-400 uppercase tracking-wider text-4xl font-medium mt-10 lg:text-xl"
+  >
+    {tags}
+  </div>
+  <h1
+    class="text-7xl font-semibold leading-snug tracking-tight mt-1 lg:text-4xl"
+  >
+    {title}
+  </h1>
+  <div class="flex gap-2 mt-3">
+    <p class="text-gray-400 text-3xl lg:text-2xl">{author}</p>
+    <span class="text-gray-400 text-3xl lg:text-2xl">-</span>
+    <p class="text-gray-400 text-3xl lg:text-2xl">{date}</p>
+  </div>
+</div>
