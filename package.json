@@ -1,5 +1,5 @@
 {
-  "name": "tfg",
+  "name": "",
   "type": "module",
   "version": "0.0.1",
   "scripts": {
@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@astrojs/mdx": "^2.0.4",
-    "@astrojs/rss": "^4.0.2",
-    "@astrojs/sitemap": "^3.0.4",
+    "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.1.2",
+    "astro-navbar": "^2.3.0",
+    "tailwindcss": "^3.4.1",
     "typescript": "^5.3.3"
   }
 }
