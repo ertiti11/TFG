@@ -1,0 +1,42 @@
+---
+import PostCard from "./PostCard.astro";
+---
+
+<section class="mt-10">
+  <h1 class="text-3xl font-bold text-center mb-24 lg:text-5xl">Novedades</h1>
+
+  <div class="flex flex-col w-full items-center gap-12 lg:grid lg:grid-cols-3">
+    <div class="lg:col-span-3">
+      <PostCard
+        title="prueba de como funciona un blog con astro"
+        author="ertiti11"
+        date="2021/10/10"
+        tags={["astro"]}
+      />
+    </div>
+    <div class="lg:col-span-1">
+      <PostCard
+        title="prueba de como funciona un blog con astro"
+        author="ertiti11"
+        date="2021/10/10"
+        tags={["astro"]}
+      />
+    </div>
+    <div class="lg:col-span-1">
+      <PostCard
+        title="prueba de como funciona un blog con astro"
+        author="ertiti11"
+        date="2021/10/10"
+        tags={["astro"]}
+      />
+    </div>
+    <div class="lg:col-span-1">
+      <PostCard
+        title="prueba de como funciona un blog con astro"
+        author="ertiti11"
+        date="2021/10/10"
+        tags={["astro"]}
+      />
+    </div>
+  </div>
+</section>

@@ -1,12 +1,15 @@
 ---
 import PostCard from "../components/PostCard.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<section class="p-11">
-  <PostCard
-    title="prueba de como funciona un blog con astro"
-    author="ertiti11"
-    date="2021/10/10"
-    tags={["astro"]}
-  />
-</section>
+<Layout title="Blog">
+  <section class="p-11">
+    <PostCard
+      title="prueba de como funciona un blog con astro"
+      author="ertiti11"
+      date="2021/10/10"
+      tags={["astro"]}
+    />
+  </section>
+</Layout>
