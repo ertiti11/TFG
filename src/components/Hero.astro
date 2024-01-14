@@ -1,6 +1,7 @@
 ---
 import { Picture } from "astro:assets";
 import heroImage from "./assets/Hero.svg";
+import hero from "./assets/Hero.png";
 import Link from "../components/ui/link.astro";
 ---
 
@@ -9,7 +10,7 @@ import Link from "../components/ui/link.astro";
 >
   <div class="py-6 md:order-1 hidden md:block">
     <Picture
-      src={heroImage}
+      src={hero}
       alt="Astronaut in the air"
       widths={[200, 400, 600]}
       sizes="(max-width: 800px) 100vw, 620px"
