@@ -6,25 +6,23 @@ const { title, photo, author, date, tags } = Astro.props;
 ---
 
 <div class="w-full flex flex-col">
-  <Image
-    src={foto}
+  <img
+    src="https://images.pexels.com/photos/13392576/pexels-photo-13392576.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
     alt="prueba?"
     widths={[200, 400, 600]}
     sizes="(max-width: 800px) 100vw, 800px"
     loading="eager"
     class="w-full object-cover rounded-xl object-center bg-white hover:scale-[1.03] transition-all duration-300 ease-in-out"
   />
-  <div
-    class="text-blue-400 uppercase tracking-wider text-lg text-opacity-60 font-medium mt-10 lg:text-xl"
-  >
-    {tags}
-  </div>
-  <h1
-    class="text-2xl font-semibold leading-snug tracking-tight mt-1 lg:text-4xl"
-  >
-    {title}
-  </h1>
-  <div class="flex gap-2 mt-3">
-    <p class="text-gray-400 text-md">{date}</p>
-  </div>
+</div>
+<div
+  class="text-blue-400 uppercase tracking-wider text-lg text-opacity-60 font-medium mt-10 lg:text-xl"
+>
+  {tags}
+</div>
+<h1 class="text-2xl font-semibold leading-snug tracking-tight mt-1 lg:text-4xl">
+  {title}
+</h1>
+<div class="flex gap-2 mt-3">
+  <p class="text-gray-400 text-md">{date}</p>
 </div>
