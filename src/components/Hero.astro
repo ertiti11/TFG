@@ -3,18 +3,22 @@ import { Picture } from "astro:assets";
 import heroImage from "./assets/Hero.svg";
 import hero from "./assets/Hero.png";
 import Link from "../components/ui/link.astro";
+import shape from "./assets/Shape.png";
 ---
 
 <section
   class="grid lg:grid-cols-2 place-items-center pt-16 pb-8 md:pt-12 md:pb-24"
 >
-  <div class="py-6 md:order-1 hidden md:block">
+  <div
+    class="py-6 md:order-1 hidden md:block absolute max-w-[800px] -z-10 mt-48 right-1"
+  >
     <Picture
       src={hero}
       alt="Astronaut in the air"
       widths={[200, 400, 600]}
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
+      class="w-full h-full"
     />
   </div>
   <div
@@ -25,7 +29,8 @@ import Link from "../components/ui/link.astro";
     >
       Escuela de ciclistas Málaga
     </h1>
-    <p class="text-lg mt-4 text-pretty text-center text-slate-600 max-w-xl">
+    <img src={shape.src} class="absolute -z-20 w-full opacity-70 mb-32" />
+    <p class="text-lg mt-4 text-pretty text-center max-w-xl">
       Astroship is a starter template for startups, marketing websites & landing
       pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
       any website with this starter.
