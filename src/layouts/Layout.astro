@@ -23,7 +23,13 @@ const { title } = Astro.props;
   <body>
     <Navbar />
     <slot />
-  </body><!-- <style is:global>
+    <style is:global>
+      body {
+        font-family: "Poppins", sans-serif;
+      }
+    </style>
+
+    <!-- <style is:global>
 	:root {
 		--accent: 136, 58, 234;
 		--accent-light: 224, 204, 250;
@@ -52,4 +58,5 @@ const { title } = Astro.props;
 			monospace;
 	}
 </style> -->
+  </body>
 </html>
