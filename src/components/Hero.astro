@@ -4,6 +4,7 @@ import heroImage from "./assets/Hero.svg";
 import hero from "./assets/Hero.png";
 import Link from "../components/ui/link.astro";
 import shape from "./assets/Shape.png";
+import "animate.css";
 ---
 
 <section
@@ -18,14 +19,15 @@ import shape from "./assets/Shape.png";
       widths={[200, 400, 600]}
       sizes="(max-width: 800px) 100vw, 620px"
       loading="eager"
-      class="w-full h-full"
+      class="w-full h-full animate__fadeInRight animate__animated animate__delay-1s"
     />
   </div>
   <div
-    class="flex flex-col gap-5 justify-center items-center transition-opacity animate-fade-up"
+    class="flex flex-col gap-5 justify-center items-center transition-opacity"
   >
     <h1
-      class="text-4xl text-center lg:text-6xl xl:text-7xl font-bold lg:tracking-tight xl:tracking-tighter"
+      class="text-4xl text-center lg:text-6xl xl:text-7xl font-bold animate__animated animate__fadeInUp
+      lg:tracking-tight xl:tracking-tighter"
     >
       Escuela de ciclistas Málaga
     </h1>
@@ -33,7 +35,9 @@ import shape from "./assets/Shape.png";
       src={shape.src}
       class="absolute -z-20 w-full opacity-70 mb-32 blur-sm"
     /> -->
-    <p class="text-lg mt-4 text-pretty text-center max-w-xl">
+    <p
+      class="text-lg mt-4 text-pretty text-center max-w-xl animate__fadeIn animate__animated animate__delay-2s"
+    >
       Astroship is a starter template for startups, marketing websites & landing
       pages.<wbr /> Built with Astro.build and TailwindCSS. You can quickly create
       any website with this starter.
