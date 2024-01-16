@@ -1,13 +1,13 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    // ...
-    "baseUrl": ".",
+    "baseUrl": "C:/Users/Medac/programacion/TFG",
     "paths": {
       "@/*": [
         "./src/*"
       ]
-    }
-    // ...
+    },
+    "jsx": "react-jsx",
+    "jsxImportSource": "react"
   }
 }
