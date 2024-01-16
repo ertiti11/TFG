@@ -5,4 +5,9 @@ export default {
     extend: {},
   },
   plugins: ["tailwindcss-animated"],
+  integrations: [
+    tailwind({
+      applyBaseStyles: false,
+    }),
+  ],
 };
