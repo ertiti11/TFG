@@ -1,26 +1,41 @@
-
-import { Card, CardContent } from "./ui/card"
+import { Card, CardContent } from "./ui/card";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "./ui/carousel"
-import CarouselPost from "./CarouselPost"
+} from "./ui/carousel";
+import CarouselPost from "./CarouselPost";
+import { useEffect, useState } from "react";
+
+import PocketBase from "pocketbase";
 
 export default function FeaturedCarousel() {
+  const [resultList, setResultList] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const pb = new PocketBase("https://ciclismomalaga.pockethost.io");
+      const list = await pb.collection("posts").getList(1, 50);
+      setResultList(list);
+    };
+
+    fetchData();
+  }, []);
+
+  if (!resultList) {
+    return <div>Loading...</div>; // Render some loading state
+  }
+
+  console.log(resultList);
   return (
-    <Carousel className="w-full max-w-xs">
-      <CarouselContent>
+    <Carousel className="basis-1/3">
+      <CarouselContent className="w-52">
         {Array.from({ length: 5 }).map((_, index) => (
-          <CarouselItem key={index}>
+          <CarouselItem key={index} className="">
             <div className="p-1">
-              <Card>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <CarouselPost className=" text-left w-full  text-white"/>
-                </CardContent>
-              </Card>
+              <CarouselPost className=" text-left w-full  text-white" />
             </div>
           </CarouselItem>
         ))}
@@ -28,5 +43,5 @@ export default function FeaturedCarousel() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-  )
+  );
 }
