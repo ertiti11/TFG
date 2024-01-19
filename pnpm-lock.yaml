@@ -50,6 +50,9 @@ dependencies:
   lucide-react:
     specifier: ^0.309.0
     version: 0.309.0(react@18.2.0)
+  pocketbase:
+    specifier: ^0.20.3
+    version: 0.20.3
   react:
     specifier: ^18.2.0
     version: 18.2.0
@@ -3404,6 +3407,10 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 4.1.0
+    dev: false
+
+  /pocketbase@0.20.3:
+    resolution: {integrity: sha512-qembHhE7HumDBZpxWgFIbhJPeaCoUIdwhW59xF/VlMR79pDTYz/LaQ4q89y7GczKo4X9actFgFN8hs4dTl0spQ==}
     dev: false
 
   /postcss-import@15.1.0(postcss@8.4.33):
