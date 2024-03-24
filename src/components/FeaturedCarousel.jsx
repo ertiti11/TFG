@@ -16,7 +16,7 @@ export default function FeaturedCarousel() {
 
   useEffect(() => {
     const fetchData = async () => {
-      const pb = new PocketBase("https://ciclismomalaga.pockethost.io");
+      const pb = new PocketBase("https://esciclismomalaga.pockethost.io");
       const list = await pb.collection("posts").getList(1, 50);
       setResultList(list);
     };
