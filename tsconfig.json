@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": "C:/Users/vatit/programacion/TFG",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
