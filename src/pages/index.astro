@@ -2,12 +2,16 @@
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import Actualidad from "../components/Actualidad.astro";
+import FeaturedCard from "@/components/FeaturedCard.astro";
+import Slider from "@/components/Slider.jsx";
 
 ---
 
 <Layout title="Welcome to Astro.">
-  <main class="max-w-screen-xl mx-auto px-32 relative">
+  <main class="w-full mx-auto px-32 relative items-center flex flex-col justify-center">
     <Hero />
+    <FeaturedCard/>
+    <Slider client:load/>
     <Actualidad />
   </main>
 </Layout>

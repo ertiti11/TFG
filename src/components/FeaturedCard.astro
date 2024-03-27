@@ -2,26 +2,44 @@
 import { Picture } from "astro:assets";
 import banco from "./assets/banco.png";
 ---
-<div class="bg-blue-500 text-white rounded-xl shadow-lg p-6">
-  <div class="flex flex-row gap-4">
-    <h2 class="font-semibold">Nuestros Valores</h2>
-    <Picture
-      src={banco}
-      alt="Values"
-      widths={[200, 400, 600]}
-      loading="eager"
-    />
-    <div>
-        <h3 class="font-semibold">Compañerismo</h3>
-        <p class="text-sm">Valoramos la colaboración y el trabajo en equipo.</p>
+
+<section
+  class="relative z-10  py-10 shadow-lg flex flex-col items-center justify-center w-[1079px] rounded-3xl"
+>
+  <h3 class="text-4xl font-bold">Nuestros Valores</h3>
+  <div class="flex gap-24">
+    <div class="flex flex-col w-[250px] justify-center items-center gap-4">
+      <img
+        class="w-24"
+        src="https://escuela.fundacioncontadorteam.com/wp-content/uploads/fomentar@2x.png"
+        alt=""
+      />
+      <h4 class="text-3xl font-bold uppercase">Compañerismo</h4>
+      <p class="text-center font-normal leading-7">
+        Trabajamos en equipo desde el fomento de la amistad.
+      </p>
     </div>
-    <div>
-        <h3 class="font-semibold">Respeto</h3>
-        <p class="text-sm">Tratamos a todos con consideración y empatía.</p>
+    <div class="flex flex-col w-[250px] justify-center items-center gap-4">
+      <img
+        class="w-24"
+        src="https://escuela.fundacioncontadorteam.com/wp-content/uploads/fomentar@2x.png"
+        alt=""
+      />
+      <h4 class="text-3xl font-bold uppercase">Compañerismo</h4>
+      <p class="text-center font-normal leading-7">
+        Trabajamos en equipo desde el fomento de la amistad.
+      </p>
     </div>
-    <div>
-        <h3 class="font-semibold">Sacrificio</h3>
-        <p class="text-sm">Estamos dispuestos a esforzarnos por alcanzar nuestras metas.</p>
+    <div class="flex flex-col w-[250px] justify-center items-center gap-4">
+      <img
+        class="w-24"
+        src="https://escuela.fundacioncontadorteam.com/wp-content/uploads/fomentar@2x.png"
+        alt=""
+      />
+      <h4 class="text-3xl font-bold uppercase">Compañerismo</h4>
+      <p class="text-center font-normal leading-7">
+        Trabajamos en equipo desde el fomento de la amistad.
+      </p>
     </div>
   </div>
-</div>
+</section>
