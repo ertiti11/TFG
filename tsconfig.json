@@ -1,7 +1,7 @@
 {
   "extends": "astro/tsconfigs/base",
   "compilerOptions": {
-    "baseUrl": "C:/Users/Medac/programacion/TFG",
+    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
