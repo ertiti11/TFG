@@ -1,0 +1,27 @@
+---
+import { Picture } from "astro:assets";
+import banco from "./assets/banco.png";
+---
+<div class="bg-blue-500 text-white rounded-xl shadow-lg p-6">
+  <div class="flex flex-row gap-4">
+    <h2 class="font-semibold">Nuestros Valores</h2>
+    <Picture
+      src={banco}
+      alt="Values"
+      widths={[200, 400, 600]}
+      loading="eager"
+    />
+    <div>
+        <h3 class="font-semibold">Compañerismo</h3>
+        <p class="text-sm">Valoramos la colaboración y el trabajo en equipo.</p>
+    </div>
+    <div>
+        <h3 class="font-semibold">Respeto</h3>
+        <p class="text-sm">Tratamos a todos con consideración y empatía.</p>
+    </div>
+    <div>
+        <h3 class="font-semibold">Sacrificio</h3>
+        <p class="text-sm">Estamos dispuestos a esforzarnos por alcanzar nuestras metas.</p>
+    </div>
+  </div>
+</div>
