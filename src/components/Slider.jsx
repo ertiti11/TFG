@@ -11,7 +11,7 @@ import "swiper/css/bundle";
 export default function Slider() {
   return (
     <Swiper
-    style={{ width: "1245px", borderRadius: "20px", marginTop: "-30px", position: "relative"}}
+    style={{ width: "1245px", borderRadius: "20px", marginTop: "-50px", position: "relative"}}
     className=" w-[1245px]"
       modules={[Navigation, Pagination, Scrollbar, EffectFade, Autoplay]}
       spaceBetween={50}
