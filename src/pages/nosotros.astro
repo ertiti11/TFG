@@ -1,11 +1,12 @@
 ---
-import Slider from "@/components/Slider.jsx";
+import PostList from "@/components/NewPosts/PostList";
+
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
     <section class="p-40">
-        <Slider client:load></Slider>
+        <PostList client:load/>
     </section>
     
 
