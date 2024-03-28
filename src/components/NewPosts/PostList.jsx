@@ -14,7 +14,6 @@ export default function PostList() {
     };
     fetchPosts();
   }, []);
-
   return (
     <section className="w-[1245px] mt-24">
         <h1 className="text-center font-bold text-5xl">Nuevas Noticias</h1>
