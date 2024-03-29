@@ -1,4 +1,4 @@
-import React from "react";
+
 
 export default function BigPost({ title, date, category, thumbnail }) {
   return (
