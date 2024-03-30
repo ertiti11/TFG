@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-function createSlug(str) {
+export function createSlug(str) {
   const map = {
     á: "a",
     é: "e",
@@ -31,7 +31,7 @@ function createSlug(str) {
 
 
 
-function getThumb(post) {
+export function getThumb(post) {
   return `https://esciclismomalaga.pockethost.io/api/files/${post.collectionId}/${post.id}/${post.thumbnail}`
   
 }

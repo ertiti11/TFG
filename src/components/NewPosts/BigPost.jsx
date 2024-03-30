@@ -1,11 +1,5 @@
+import { createSlug } from "@/lib/utils";
 
-function createSlug(str) {
-  return str
-    .toLowerCase()
-    .replace(/[^a-z0-9 -]/g, '')  // quita caracteres inválidos
-    .replace(/\s+/g, '-')         // reemplaza espacios por guiones
-    .replace(/-+/g, '-');         // reemplaza múltiples guiones por uno solo
-}
 
 export default function BigPost({ title, date, category, thumbnail }) {
   return (
