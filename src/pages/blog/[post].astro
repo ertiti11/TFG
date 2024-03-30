@@ -27,7 +27,6 @@ const { post } = Astro.props;
 
 <BlogLayout title={post.title} thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${post.collectionId}/${post.id}/${post.thumbnail}`}>
 
-    <div>{post.content}</div>
-
+    <div set:html={post.content}></div>
 </BlogLayout>
 
