@@ -13,15 +13,14 @@ export default function Slider() {
     <Swiper
     style={{ width: "1245px", borderRadius: "20px", marginTop: "-50px", position: "relative"}}
     className=" w-[1245px]"
-      modules={[Navigation, Pagination, Scrollbar, EffectFade, Autoplay]}
+      modules={[Navigation, Pagination, EffectFade, Autoplay]}
       spaceBetween={50}
       slidesPerView={1}
       navigation
       effect="fade"
       loop={true}
-      crossFade={true}
+      
       pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
       autoplay={{ delay: 3000 }}   
     >
       <SwiperSlide>
