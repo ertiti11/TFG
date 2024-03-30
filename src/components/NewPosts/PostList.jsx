@@ -18,7 +18,12 @@ export default function PostList() {
     <section className="w-[1245px] mt-24">
       <h1 className="text-center font-bold text-5xl">Nuevas Noticias</h1>
       <BigPost
-        
+        key={posts[0].id}
+        title={posts[0].title}
+        category={posts[0].category}
+        date={posts[0].date}
+        thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${posts[0].collectionId}/${posts[0].id}/${posts[0].thumbnail}`}
+      
       />
       <div className="flex justify-between mt-10">
         {posts.slice(1).map((post) => (
