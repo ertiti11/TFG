@@ -17,7 +17,7 @@ export default function Post({ title, date, category, thumbnail }) {
             </div>
           </div>
 
-          <date>{date}</date>
+          <span>{date}</span>
         </div>
       </div>
       <h3 className=" text-3xl font-bold">
