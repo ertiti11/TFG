@@ -2,6 +2,10 @@
 import { ViewTransitions } from "astro:transitions";
 import Footer from "../components/Footer.astro";
 import Navbar from "../components/Navbar/Navbar.astro";
+
+const {title, thumbnail} = Astro.props
+
+
 ---
 
 <!doctype html>
@@ -14,19 +18,38 @@ import Navbar from "../components/Navbar/Navbar.astro";
   </head>
   <body>
     <Navbar />
-
-    <main>
-      <div class="w-full h-[400px] relative">
+    <main class="">
+      <div class="w-full h-[500px] relative ">
+        <div class="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 "></div>
         <img
-          class="w-full h-[400px] object-cover mt-24"
-          src="https://esciclismomalaga.pockethost.io/api/files/nu19xf6p3k5w509/tzsh5qzh1reiw4z/captura_de_pantalla_2024_03_26_220133_xV4dlsdpAY.png?token="
+          class="w-full h-[500px] object-cover mt-24 "
+          src={thumbnail}
           alt=""
         />
+        <h1 class="bottom-0 absolute text-5xl text-white">{title}</h1>
 
-        <h1 class="bottom-0 absolute">hola omo estas </h1>
+          <div class="mx-24 bg-white/90  p-8 rounded" >
+            <slot/>
+          </div>
+
+
       </div>
+
+
+
+
 
       <Footer />
     </main>
   </body>
 </html>
+
+
+
+
+
+<script>
+
+
+
+</script>

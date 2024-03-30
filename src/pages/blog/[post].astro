@@ -1,16 +1,10 @@
 ---
 import PocketBase from 'pocketbase';
-
-
+import BlogLayout from '@/layouts/BlogLayout.astro';
+import {createSlug, getThumb} from '@/lib/utils'
 export async function getStaticPaths() {
 
-    function createSlug(str) {
-        return str
-            .toLowerCase()
-            .replace(/[^a-z0-9 -]/g, '')  // quita caracteres inválidos
-            .replace(/\s+/g, '-')         // reemplaza espacios por guiones
-            .replace(/-+/g, '-');         // reemplaza múltiples guiones por uno solo
-    }
+    
     const pb = new PocketBase('https://esciclismomalaga.pockethost.io');
     const resultList = await pb.collection('posts').getList(1, 50);
     const items = await resultList.items;
@@ -23,4 +17,10 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 ---
-<div>{post.title}</div>
+
+
+<BlogLayout title={post.title} thumbnail={getThumb(post)}>
+
+    <div set:html={post.content}></div>
+</BlogLayout>
+
