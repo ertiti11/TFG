@@ -1,8 +1,16 @@
 import React from "react";
 
-export default function BigPost({ title, date, category, thumbnail}) {
+function createSlug(str) {
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9 -]/g, '')  // quita caracteres inválidos
+    .replace(/\s+/g, '-')         // reemplaza espacios por guiones
+    .replace(/-+/g, '-');         // reemplaza múltiples guiones por uno solo
+}
+
+export default function BigPost({ title, date, category, thumbnail }) {
   return (
-    <div class="w-full relative rounded-3xl">
+    <a class="w-full relative rounded-3xl" href={`/blog/${createSlug(title)}`}>
       <div class="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10"></div>
 
       <img class="" src={thumbnail} alt="" />
@@ -17,6 +25,7 @@ export default function BigPost({ title, date, category, thumbnail}) {
           </div>
         </div>
       </div>
-    </div>
+
+    </a>
   );
 }

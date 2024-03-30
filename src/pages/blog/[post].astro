@@ -1,0 +1,26 @@
+---
+import PocketBase from 'pocketbase';
+
+
+export async function getStaticPaths() {
+
+    function createSlug(str) {
+        return str
+            .toLowerCase()
+            .replace(/[^a-z0-9 -]/g, '')  // quita caracteres inválidos
+            .replace(/\s+/g, '-')         // reemplaza espacios por guiones
+            .replace(/-+/g, '-');         // reemplaza múltiples guiones por uno solo
+    }
+    const pb = new PocketBase('https://esciclismomalaga.pockethost.io');
+    const resultList = await pb.collection('posts').getList(1, 50);
+    const items = await resultList.items;
+
+    return items.map((item) => ({
+        params: { post: createSlug(item.title) },
+        props: { post: item}
+    }));
+}
+
+const { post } = Astro.props;
+---
+<div>{post.title}</div>
