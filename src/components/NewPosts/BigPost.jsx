@@ -18,7 +18,7 @@ export default function BigPost({ title, date, category, thumbnail }) {
           </h3>
         </div>
         <div className="w-full flex justify-end items-end gap-6">
-          <div className="w-20 py-1 px-6 bg-blue-500 flex items-center justify-center rounded-full leading-normal ">
+          <div className="w-20 py-1 px-6 hover:cursor-pointer hover:scale-105 bg-blue-500 flex items-center justify-center rounded-full leading-normal ">
             <span className="m-0 p-0 ">{category}</span>
           </div>
         </div>
