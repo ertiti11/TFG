@@ -10,11 +10,9 @@ export default function PostList() {
       const pb = new PocketBase("https://esciclismomalaga.pockethost.io");
       const resultList = await pb.collection("posts").getList(1, 5);
       setPosts(resultList);
-      console.log(resultList);
     };
     fetchPosts();
   }, []);
-  console.log(posts)
   return (
     <section className="w-[1245px] mt-24">
         <h1 className="text-center font-bold text-5xl">Nuevas Noticias</h1>

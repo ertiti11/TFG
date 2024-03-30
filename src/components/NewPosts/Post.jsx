@@ -12,7 +12,7 @@ export default function Post({ title, date, category, thumbnail }) {
         />
         <div className="absolute bottom-0 z-10 text-white py-4 px-3 flex items-center gap-2 justify-between w-full">
           <div className="flex gap-2">
-            <div className="w-20 py-1 px-6 bg-blue-500 flex items-center justify-center rounded-full leading-normal ">
+            <div className="w-20 py-1 px-6 bg-blue-500 flex hover:cursor-pointer hover:scale-105 items-center  hover:transition-all justify-center rounded-full leading-normal ">
               <span className="m-0 p-0 ">{category}</span>
             </div>
           </div>

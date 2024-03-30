@@ -28,7 +28,6 @@ export default function FeaturedCarousel() {
     return <div>Loading...</div>; // Render some loading state
   }
 
-  console.log(resultList);
   return (
     <Carousel className="basis-1/3">
       <CarouselContent className="w-52">

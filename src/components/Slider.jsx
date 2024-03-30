@@ -22,9 +22,7 @@ export default function Slider() {
       crossFade={true}
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
-      autoplay={{ delay: 3000 }}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
+      autoplay={{ delay: 3000 }}   
     >
       <SwiperSlide>
         <img
