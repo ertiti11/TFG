@@ -3,53 +3,36 @@ import PocketBase from "pocketbase";
 import Post from "./Post";
 import BigPost from "./BigPost";
 export default function PostList() {
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState(null);
 
   useEffect(() => {
     const fetchPosts = async () => {
       const pb = new PocketBase("https://esciclismomalaga.pockethost.io");
-      const resultList = await pb.collection("posts").getList(1, 5);
-      setPosts(resultList);
+      const resultList = await pb.collection("posts").getList(1, 4);
+      setPosts(resultList.items);
     };
     fetchPosts();
   }, []);
-  return (
+
+  return posts ? (
     <section className="w-[1245px] mt-24">
-        <h1 className="text-center font-bold text-5xl">Nuevas Noticias</h1>
+      <h1 className="text-center font-bold text-5xl">Nuevas Noticias</h1>
       <BigPost
-        title="como ser mejor persona"
-        category={"carrera"}
-        date="12/12/2024"
-        thumbnail={
-          "https://www.ciclismoafondo.es/uploads/s1/12/52/84/6/5dc6b0680de694c7403493c1-10-ciclistas-a-seguir-en-2020.jpeg"
-        }
+        title={posts[0].title}
+        category={posts[0].category}
+        date={posts[0].date}
+        thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${posts[0].collectionId}/${posts[0].id}/${posts[0].thumbnail}`}
       />
       <div className="flex justify-between mt-10">
-        <Post
-          title="como ser mejor persona"
-          category={"carrera"}
-          date="12/12/2024"
-          thumbnail={
-            "https://www.ciclismoafondo.es/uploads/s1/12/52/84/6/5dc6b0680de694c7403493c1-10-ciclistas-a-seguir-en-2020.jpeg"
-          }
-        />
-        <Post
-          title="como ser mejor persona"
-          category={"carrera"}
-          date="12/12/2024"
-          thumbnail={
-            "https://www.ciclismoafondo.es/uploads/s1/12/52/84/6/5dc6b0680de694c7403493c1-10-ciclistas-a-seguir-en-2020.jpeg"
-          }
-        />
-        <Post
-          title="como ser mejor persona"
-          category={"carrera"}
-          date="12/12/2024"
-          thumbnail={
-            "https://www.ciclismoafondo.es/uploads/s1/12/52/84/6/5dc6b0680de694c7403493c1-10-ciclistas-a-seguir-en-2020.jpeg"
-          }
-        />
+        {posts.slice(1).map((post) => (
+          <Post
+            title={post.title}
+            category={post.category}
+            date={post.date}
+            thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${post.collectionId}/${post.id}/${post.thumbnail}`}
+          />
+        ))}
       </div>
     </section>
-  );
+  ) : null;
 }
