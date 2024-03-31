@@ -6,7 +6,7 @@ import { getThumb } from '@/lib/utils'
 
 async function getItems() {
   const pb = new PocketBase("https://esciclismomalaga.pockethost.io");
-  const resultList = await pb.collection("guias").getList(1, 4);
+  const resultList = await pb.collection("guias").getList(1, 50);
   return resultList.items;
 }
 
@@ -15,8 +15,8 @@ console.log(items);
 ---
 
 <Archive>
-    <section class="w-[1245px] mt-24">
-    <h1 class="text-center font-bold text-5xl">Nuevas Noticias</h1>
+    <h1 class="text-center font-bold text-5xl mt-32">Nuevas Noticias</h1>
+    <section class="w-full mt-24 grid grid-cols-3 justify-items-center">
     {
         items.map((item) => (
         <GuidePost title={item.title} date={item.created} thumbnail={getThumb(item)} />

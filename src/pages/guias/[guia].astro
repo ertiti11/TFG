@@ -1,0 +1,22 @@
+---
+import PocketBase from 'pocketbase';
+import BlogLayout from '../../layouts/BlogLayout.astro';
+import { createSlug, getThumb } from "../../lib/utils"
+
+export async function getStaticPaths() {
+    const pb = new PocketBase('https://esciclismomalaga.pockethost.io');
+    const resultList = await pb.collection('guias').getList(1, 50);
+    const items = await resultList.items;
+
+    return items.map((item) => ({
+        params: { guia: createSlug(item.title) },
+        props: { guia: item}
+    }));
+}
+
+const { guia } = Astro.props;
+---
+
+<BlogLayout title={guia.title} thumbnail={getThumb(guia)}>
+    <div set:html={guia.content}></div>
+</BlogLayout>
