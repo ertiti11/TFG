@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import PocketBase from "pocketbase";
 import Post from "./Post";
 import BigPost from "./BigPost";
+import { getThumb } from '@/lib/utils'
 export default function PostList() {
   const [posts, setPosts] = useState(null);
 
@@ -22,7 +23,7 @@ export default function PostList() {
         title={posts[0].title}
         category={posts[0].category}
         date={posts[0].date}
-        thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${posts[0].collectionId}/${posts[0].id}/${posts[0].thumbnail}`}
+        thumbnail={getThumb(posts[0])}
       
       />
       <div className="flex justify-between mt-10">
@@ -32,7 +33,7 @@ export default function PostList() {
             title={post.title}
             category={post.category}
             date={post.date}
-            thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${post.collectionId}/${post.id}/${post.thumbnail}`}
+            thumbnail={getThumb(post)}
           />
         ))}
       </div>
