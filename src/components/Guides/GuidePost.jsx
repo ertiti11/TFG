@@ -1,7 +1,8 @@
+import { createSlug } from "@/lib/utils";
 
 export default function Post({ title, date, thumbnail }) {
     return (
-      <a className="w-96" href={`/blog/${title}`}>
+      <a className="w-96" href={`/guias/${createSlug(title)}`}>
         <div className=" w-96 rounded-lg h-64 relative">
         <div className=" rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 z-10 "></div>
         <img
