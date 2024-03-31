@@ -2,6 +2,7 @@
 import GuidePost from "@/components/Guides/GuidePost";
 import Archive from "../layouts/Archive.astro";
 import PocketBase from 'pocketbase';
+import { getThumb } from '@/lib/utils'
 
 async function getItems() {
   const pb = new PocketBase("https://esciclismomalaga.pockethost.io");
@@ -18,7 +19,7 @@ console.log(items);
     <h1 class="text-center font-bold text-5xl">Nuevas Noticias</h1>
     {
         items.map((item) => (
-        <GuidePost title={item.title} date={item.created} thumbnail={`https://esciclismomalaga.pockethost.io/api/files/${item.collectionId}/${item.id}/${item.thumbnail}`} />
+        <GuidePost title={item.title} date={item.created} thumbnail={getThumb(item)} />
         ))
     }
     </section>
