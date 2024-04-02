@@ -1,8 +1,32 @@
 ---
+import Layout from "../layouts/Layout.astro";
+import PocketBase from 'pocketbase';
+import { getThumb } from '@/lib/utils'
+import Post from "@/components/NewPosts/Post";
 
-import PostCard from "../components/PostCard.astro";
-import BlogLayout from "../layouts/BlogLayout.astro";
+async function getItems() {
+  const pb = new PocketBase("https://esciclismomalaga.pockethost.io");
+  const resultList = await pb.collection("posts").getList(1, 50);
+  return resultList.items;
+}
+
+const items = await getItems();
+console.log(items);
 ---
 
-<BlogLayout>
-</BlogLayout>
+<Layout title="Blog">
+    <h1 class="text-center font-bold text-5xl mt-32">Últimas publicaciones</h1>
+    <section class="w-100 ml-64 mr-64 mt-24 grid grid-cols-3 justify-items-center">
+    {
+        items.map((item) => 
+        (
+          <Post
+            title={item.title}
+            category={item.category}
+            date={item.date}
+            thumbnail={getThumb(item)}
+          />
+        ))
+    }
+    </section>
+</Layout>
