@@ -18,5 +18,5 @@ const { post } = Astro.props;
 ---
 
 <BlogLayout title={post.title} thumbnail={getThumb(post)}>
-    <div set:html={post.content} />
+    <div class="m-8" set:html={post.content} />
 </BlogLayout>

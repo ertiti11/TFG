@@ -20,7 +20,7 @@ export default function Post({ title, date, thumbnail }) {
           <span>{date}</span>
         </div>
       </div>
-        <h3 className=" text-3xl font-bold">
+        <h3 className="mb-8 text-3xl font-bold">
           {title}
         </h3>
       </a>
