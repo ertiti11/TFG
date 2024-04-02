@@ -18,7 +18,7 @@ const {title, thumbnail} = Astro.props
   </head>
   <body>
     <Navbar />
-    <main class="">
+    <main>
       <div class="w-full h-[500px] relative ">
         <div class="rounded-xl absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-70 "></div>
         <img
@@ -27,23 +27,14 @@ const {title, thumbnail} = Astro.props
           alt=""
         />
         <h1 class="bottom-0 absolute text-5xl text-white">{title}</h1>
-
-          <div class="mx-24 bg-white/90  p-8 rounded" >
-            <slot/>
-          </div>
-
-
+        <slot />
+        
       </div>
-
-
-
-
 
       <Footer />
     </main>
   </body>
 </html>
-
 
 
 
