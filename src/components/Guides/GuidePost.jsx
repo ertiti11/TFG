@@ -1,4 +1,4 @@
-import { createSlug } from "@/lib/utils";
+import { createSlug, formatDate } from "@/lib/utils";
 
 export default function Post({ title, date, thumbnail }) {
     return (
@@ -17,7 +17,7 @@ export default function Post({ title, date, thumbnail }) {
             </div>
           </div>
 
-          <span>{date}</span>
+          <span>{formatDate(date)}</span>
         </div>
       </div>
         <h3 className="mb-8 text-3xl font-bold">
