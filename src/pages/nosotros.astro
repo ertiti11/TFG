@@ -1,11 +1,49 @@
 ---
-import PostList from "@/components/NewPosts/PostList";
-
+import Image from "../components/assets/prueba.jpeg"
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="Welcome to Astro.">
-  <section class="p-40">
-    <PostList client:load />
+  <h1 class="text-center font-bold text-6xl mt-48">Sobre nosotros</h1>
+  <section class="w-100 mt-24 flex flex-col justify-center">
+    <div class="w-full flex mt-16">
+      <div class="w-80 ml-32 text-2xl flex items-center">
+        <p class="text-red-700">NUESTRO VALOR</p>
+      </div>
+      <div class="w-full ml-16 text-7xl">
+        <h2 class="mr-8">LA PASIÓN POR EL CICLISMO: LA MEJOR RUTA DE APRENDIZAJE EN MÁLAGA</h2>
+      </div>
+    </div>
+    <div class="w-full w-max-full flex justify-around mt-36">
+      <img src={Image.src} class="w-2/5">
+      <img src={Image.src} class="w-2/5">
+    </div>
+
+    <div class="w-full flex mt-24">
+      <div class="w-80 ml-32 text-2xl flex items-center">
+        <p class="text-red-700">NUESTRA MISIÓN</p>
+      </div>
+      <div class="w-full ml-16 text-7xl">
+        <h2 class="mr-8">LA PASIÓN POR EL CICLISMO: LA MEJOR RUTA DE APRENDIZAJE EN MÁLAGA</h2>
+        <p class="text-2xl w-2/3 mt-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus suscipit nesciunt soluta ad sed repellat accusamus in eius quidem inventore facere voluptate voluptates, libero at pariatur neque laborum reprehenderit error. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione possimus ab quaerat aperiam veniam modi nulla nam eaque, inventore excepturi, voluptas nobis consequuntur alias illum provident et, laborum consequatur quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus omnis illo accusantium. Animi voluptas esse quod quo, fuga, excepturi, labore quasi sint vitae unde ipsa temporibus quibusdam reprehenderit nesciunt non!</p>
+      </div>
+    </div>
+    <div class="w-full w-max-full flex justify-around mt-36">
+      <!-- Aquí iría una <video> en vez de la <img> -->
+      <img class="w-2/3" src={Image.src}>
+    </div>
+
+    <div class="w-full flex mt-24">
+      <div class="w-80 ml-32 text-2xl flex items-center">
+        <p class="text-red-700">NUESTRO PROPÓSITO</p>
+      </div>
+      <div class="w-full ml-16 text-7xl">
+        <h2 class="mr-8">LA PASIÓN POR EL CICLISMO: LA MEJOR RUTA DE APRENDIZAJE EN MÁLAGA</h2>
+        <p class="text-2xl w-2/3 mt-8">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus suscipit nesciunt soluta ad sed repellat accusamus in eius quidem inventore facere voluptate voluptates, libero at pariatur neque laborum reprehenderit error. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione possimus ab quaerat aperiam veniam modi nulla nam eaque, inventore excepturi, voluptas nobis consequuntur alias illum provident et, laborum consequatur quis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus omnis illo accusantium. Animi voluptas esse quod quo, fuga, excepturi, labore quasi sint vitae unde ipsa temporibus quibusdam reprehenderit nesciunt non!</p>
+      </div>
+    </div>
+    <div class="w-full w-max-full flex justify-around mt-36">
+      <img class="w-2/3" src={Image.src}>
+    </div>
   </section>
 </Layout>
