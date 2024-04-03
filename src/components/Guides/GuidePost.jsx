@@ -1,5 +1,4 @@
-import { createSlug, formatDate } from "@/lib/utils";
-
+import { createSlug,formatDate } from "@/lib/utils";
 export default function Post({ title, date, thumbnail }) {
     return (
       <a className="w-96" href={`/guias/${createSlug(title)}`}>

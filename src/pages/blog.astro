@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import PocketBase from 'pocketbase';
-import { getThumb } from '@/lib/utils'
+import { getThumb, formatDate } from '@/lib/utils'
 import Post from "@/components/NewPosts/Post";
 
 async function getItems() {
@@ -23,7 +23,7 @@ console.log(items);
           <Post
             title={item.title}
             category={item.category}
-            date={item.date}
+            date={formatDate(item.date)}
             thumbnail={getThumb(item)}
           />
         ))
