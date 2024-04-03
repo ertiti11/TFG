@@ -39,7 +39,7 @@ export default function Slider() {
       </SwiperSlide>
       <SwiperSlide>
         <img
-          src="https://escuela.fundacioncontadorteam.com/wp-content/uploads/slide-01-2048x1050.jpg"
+          src="https://www.siroko.com/blog/c/app/uploads/2021/07/efectos-positivos-1440x900.jpg.webp"
           alt=""
           loading="lazy"
         />

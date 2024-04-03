@@ -28,7 +28,14 @@ export function createSlug(str) {
     .replace(/-+/g, "-"); // reemplaza múltiples guiones por uno solo
 }
 
+export function formatDate(str) {
+  const date = new Date(str);
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Los meses en JavaScript comienzan desde 0
+  const year = date.getFullYear();
 
+  return `${day}/${month}/${year}`;
+}
 
 
 export function getThumb(post) {

@@ -1,10 +1,13 @@
+
 import { useEffect, useState } from "react";
 import PocketBase from "pocketbase";
 import Post from "./Post";
 import BigPost from "./BigPost";
-import { getThumb } from '@/lib/utils'
+import { getThumb, formatDate } from '@/lib/utils';
 export default function PostList() {
   const [posts, setPosts] = useState(null);
+
+  
 
   useEffect(() => {
     const fetchPosts = async () => {
@@ -22,7 +25,7 @@ export default function PostList() {
         key={posts[0].id}
         title={posts[0].title}
         category={posts[0].category}
-        date={posts[0].date}
+        date={formatDate(posts[0].date)}
         thumbnail={getThumb(posts[0])}
       
       />
@@ -32,7 +35,7 @@ export default function PostList() {
             key={post.id}
             title={post.title}
             category={post.category}
-            date={post.date}
+            date={formatDate(post.date)}
             thumbnail={getThumb(post)}
           />
         ))}
