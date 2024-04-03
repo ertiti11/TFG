@@ -28,7 +28,9 @@ export function createSlug(str) {
     .replace(/-+/g, "-"); // reemplaza múltiples guiones por uno solo
 }
 
-
+export function dateFormater(date) {
+  return `${date.getFullYear()}/${(date.getMonth() + 1).toString().padStart(2, '0')}/${date.getDate().toString().padStart(2, '0')}`;
+}
 
 
 export function getThumb(post) {
